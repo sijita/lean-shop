@@ -1,6 +1,17 @@
 import ProductTabs from './product-tabs';
+import {
+  PiMedal,
+  PiTruck,
+  PiHandshake,
+  PiHeadphones,
+  PiCreditCard,
+} from 'react-icons/pi';
 
-export default function ProductDetails({ description }: { description: string }) {
+export default function ProductDetails({
+  description,
+}: {
+  description: string;
+}) {
   return (
     <div className="rounded border border-gray-200">
       <ProductTabs />
@@ -10,26 +21,34 @@ export default function ProductDetails({ description }: { description: string })
           <p className="text-[#5F6C72]">{description}</p>
         </div>
         <div className="flex flex-col gap-3">
-          <h3 className="font-semibold">Features</h3>
+          <h3 className="font-semibold">Feature</h3>
           <ul className="space-y-3 text-sm text-gray-600">
             <li className="flex items-center space-x-2">
-              <span className="h-2 w-2 rounded-full bg-blue-500"></span>
+              <PiMedal size={20} color="orange" className="flex-shrink-0" />
               <span>Free 1 Year Warranty</span>
             </li>
             <li className="flex items-center space-x-2">
-              <span className="h-2 w-2 rounded-full bg-blue-500"></span>
+              <PiTruck size={20} color="orange" className="flex-shrink-0" />
               <span>Free Shipping & Fastest Delivery</span>
             </li>
             <li className="flex items-center space-x-2">
-              <span className="h-2 w-2 rounded-full bg-blue-500"></span>
+              <PiHandshake size={20} color="orange" className="flex-shrink-0" />
               <span>100% Money-back guarantee</span>
             </li>
             <li className="flex items-center space-x-2">
-              <span className="h-2 w-2 rounded-full bg-blue-500"></span>
+              <PiHeadphones
+                size={20}
+                color="orange"
+                className="flex-shrink-0"
+              />
               <span>24/7 Customer support</span>
             </li>
             <li className="flex items-center space-x-2">
-              <span className="h-2 w-2 rounded-full bg-blue-500"></span>
+              <PiCreditCard
+                size={20}
+                color="orange"
+                className="flex-shrink-0"
+              />
               <span>Secure payment method</span>
             </li>
           </ul>
