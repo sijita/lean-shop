@@ -1,0 +1,149 @@
+@import '@/app/globals.scss';
+
+.cart-container {
+  @apply min-h-screen;
+
+  .cart-row {
+    @apply flex flex-col lg:flex-row justify-center gap-5 max-w-6xl mx-auto p-10;
+
+    .products-resume-container {
+      @apply border border-gray-200 min-w-[300px] w-full;
+
+      h1 {
+        @apply text-xl font-medium p-5 border-b border-gray-200;
+      }
+
+      .products-resume {
+        @apply h-full w-full overflow-x-auto flex flex-col gap-5;
+
+        table {
+          @apply w-full;
+
+          .table-header {
+            @apply text-sm uppercase text-gray-500 bg-[#E4E7E9];
+
+            .first-th {
+              @apply py-3 px-5 text-left w-6/12;
+            }
+
+            .right-th {
+              @apply py-3 px-5 text-right w-2/12;
+            }
+
+            .center-th {
+              @apply py-3 px-5 text-center w-2/12;
+            }
+          }
+
+          tbody {
+            @apply divide-y divide-gray-200 p-5;
+          }
+
+          .product-row-container {
+            @apply align-middle;
+
+            .product-td {
+              @apply py-4 px-5 flex items-center gap-4;
+
+              .delete-button {
+                @apply text-gray-400 hover:text-gray-500 cursor-pointer;
+              }
+
+              img {
+                @apply h-16 w-16 rounded-lg object-contain;
+              }
+
+              .name {
+                @apply text-sm text-pretty;
+              }
+            }
+
+            .discount-td {
+              @apply py-4 px-5 text-right;
+            }
+
+            .quantity-td {
+              @apply py-4 px-5 text-center  col-span-2;
+            }
+
+            .subtotal-td {
+              @apply py-4 px-5 text-right font-medium col-span-2;
+            }
+          }
+
+          .action-buttons {
+            @apply w-12/12 flex items-center gap-3 justify-between flex-wrap p-5;
+
+            .return-button {
+              @apply flex items-center justify-center gap-3 rounded border border-[#2DA5F3] hover:bg-blue-50 px-6 py-2 max-md:w-full;
+
+              span {
+                @apply text-[#2DA5F3];
+              }
+            }
+
+            .update-button {
+              @apply rounded border border-[#2DA5F3] px-6 py-2 text-sm text-[#2DA5F3] hover:bg-blue-50 max-md:w-full;
+            }
+          }
+        }
+      }
+
+      .empty-cart {
+        @apply flex flex-col gap-2 items-center justify-center p-10;
+
+        h3 {
+          @apply text-lg text-gray-500;
+        }
+
+        .return-button {
+          @apply flex items-center justify-center gap-3 rounded border border-[#2DA5F3] hover:bg-blue-50 px-6 py-2 max-md:w-full;
+        }
+      }
+    }
+
+    .price-resume-container {
+      @apply border border-gray-200 rounded p-6 xl:w-[420px] w-full max-h-auto self-start flex flex-col gap-5;
+
+      h3 {
+        @apply text-xl font-medium;
+      }
+
+      .column {
+        @apply space-y-4;
+
+        .prices-row {
+          @apply flex justify-between text-sm;
+
+          .item {
+            @apply text-gray-600;
+          }
+
+          .value {
+            @apply font-medium;
+          }
+        }
+
+        .horizontal-divider {
+          @apply border-t border-gray-200 pt-4;
+        }
+
+        .total-price {
+          @apply flex justify-between;
+
+          .item {
+            @apply text-gray-600;
+          }
+
+          .total-value {
+            @apply text-lg font-medium text-right;
+          }
+        }
+
+        .purchase-button {
+          @apply w-full rounded bg-[#FF7E1B] px-6 py-3 text-center text-sm font-medium text-white hover:bg-[#FF7E1B]/90 cursor-pointer disabled:bg-[#FF7E1B]/50 disabled:cursor-default;
+        }
+      }
+    }
+  }
+}

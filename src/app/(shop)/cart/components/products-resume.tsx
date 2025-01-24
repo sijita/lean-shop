@@ -10,48 +10,44 @@ export default function ProductsResume() {
   }));
 
   return (
-    <div className="border border-gray-200 min-w-[300px] w-full">
-      <h1 className="text-xl font-medium p-5 border-b border-gray-200">
-        Shopping Card
-      </h1>
+    <div className="products-resume-container">
+      <h1>Shopping Card</h1>
       {items.length > 0 ? (
-        <div className="h-full w-full overflow-x-auto flex flex-col gap-5">
-          <table className="w-full">
+        <div className="products-resume">
+          <table>
             <thead>
-              <tr className="text-sm uppercase text-gray-500 bg-[#E4E7E9]">
-                <th className="py-3 px-5 text-left w-6/12">Products</th>
-                <th className="py-3 px-5 text-right w-2/12">Price</th>
-                <th className="py-3 px-5 text-center w-2/12">Quantity</th>
-                <th className="py-3 px-5 text-right w-2/12">Sub-total</th>
+              <tr className="table-header">
+                <th className="first-th">Products</th>
+                <th className="right-th">Price</th>
+                <th className="center-th">Quantity</th>
+                <th className="right-th">Sub-total</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-200 p-5">
+            <tbody>
               {items.map((item) => (
                 <ProductRow key={item.id} {...item} />
               ))}
             </tbody>
+            <tfoot>
+              <tr>
+                <td colSpan={6}>
+                  <hr className="border-gray-200" />
+                  <div className="action-buttons">
+                    <Link href="/" className="return-button">
+                      <FaArrowLeft color="#2DA5F3" />
+                      <span>RETURN TO SHOP</span>
+                    </Link>
+                    <button className="update-button">UPDATE CART</button>
+                  </div>
+                </td>
+              </tr>
+            </tfoot>
           </table>
-          <hr className="border-gray-200" />
-          <div className="w-full flex items-center gap-3 justify-between flex-wrap p-5">
-            <Link
-              href="/"
-              className="flex items-center justify-center gap-3 rounded border border-[#2DA5F3] hover:bg-blue-50 px-6 py-2 max-md:w-full"
-            >
-              <FaArrowLeft color="#2DA5F3" />
-              <span className="text-[#2DA5F3]">RETURN TO SHOP</span>
-            </Link>
-            <button className="rounded border border-[#2DA5F3] px-6 py-2 text-sm text-[#2DA5F3] hover:bg-blue-50 max-md:w-full">
-              UPDATE CART
-            </button>
-          </div>
         </div>
       ) : (
-        <div className="flex flex-col gap-2 items-center justify-center p-10">
-          <span className="text-lg text-gray-500">Your cart is empty</span>
-          <Link
-            href="/"
-            className="flex items-center justify-center gap-3 rounded border border-[#2DA5F3] hover:bg-blue-50 px-6 py-2 max-md:w-full"
-          >
+        <div className="empty-cart">
+          <h3>Your cart is empty</h3>
+          <Link href="/" className="return-button">
             <FaArrowLeft color="#2DA5F3" />
             <span className="text-[#2DA5F3]">RETURN TO SHOP</span>
           </Link>

@@ -1,12 +1,13 @@
+import './styles/cart.scss';
 import Breadcrumb from '@/components/ui/breadcrumb/breadcrumb';
 import ProductsResume from './components/products-resume';
 import PriceResume from './components/price-resume';
 
 export default function Page() {
   return (
-    <div className="min-h-screen">
+    <div className="cart-container">
       <Breadcrumb />
-      <div className="flex flex-col lg:flex-row justify-center gap-5 max-w-6xl mx-auto p-10">
+      <div className="cart-row">
         <ProductsResume />
         <PriceResume />
       </div>
