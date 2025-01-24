@@ -1,4 +1,3 @@
-'use client';
 import Breadcrumb from '@/components/ui/breadcrumb';
 import ProductsResume from './components/products-resume';
 import PriceResume from './components/price-resume';

@@ -1,6 +1,9 @@
+'use client';
 import useGetTotalPrices from '@/app/(shop)/cart/hooks/use-get-total-prices';
+import useProccessPurchase from '../hooks/use-proccess-purchase';
 
 export default function PriceResume() {
+  const { pending, handleProccessPurchase } = useProccessPurchase();
   const { subtotal, totalDiscount, total } = useGetTotalPrices();
 
   return (
@@ -24,10 +27,11 @@ export default function PriceResume() {
           </div>
         </div>
         <button
-          disabled={!total}
+          onClick={() => handleProccessPurchase()}
+          disabled={!total || pending}
           className="w-full rounded bg-[#FF7E1B] px-6 py-3 text-center text-sm font-medium text-white hover:bg-[#FF7E1B]/90 cursor-pointer disabled:bg-[#FF7E1B]/50 disabled:cursor-default"
         >
-          PROCEED TO CHECKOUT
+          {pending ? 'Processing...' : 'PROCEED TO CHECKOUT'}
         </button>
       </div>
     </div>

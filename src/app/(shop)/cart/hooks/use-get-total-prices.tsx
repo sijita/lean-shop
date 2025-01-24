@@ -1,7 +1,7 @@
 import { useCartStore } from '@/store/use-cart-store';
 
 export default function useGetTotalPrices() {
-  const { items } = useCartStore((state) => ({
+  const { items,  } = useCartStore((state) => ({
     items: state.items,
   }));
 
