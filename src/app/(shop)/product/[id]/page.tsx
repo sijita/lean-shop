@@ -6,6 +6,7 @@ import ProductInfo from './components/product-info';
 import DiscountPrices from '@/components/product/discount-prices';
 import ProductDetails from './components/product-details';
 import ProductActions from './components/product-actions';
+import DiscountBadge from '@/components/product/discount-badge';
 
 type ProductDetailProps = {
   params: {
@@ -45,9 +46,15 @@ export default async function ProductDetail({ params }: ProductDetailProps) {
               </h1>
             </div>
             <ProductInfo />
-            <DiscountPrices price={product.price} discount={product.discount} />
+            <div className="flex items-center gap-2">
+              <DiscountPrices
+                price={product.price}
+                discount={product.discount}
+              />
+              <DiscountBadge discount={product.discount} />
+            </div>
             <hr className="text-[#E4E7E9]" />
-            <ProductActions />
+            <ProductActions product={product} />
           </div>
         </div>
         <ProductDetails description={product.summary} />

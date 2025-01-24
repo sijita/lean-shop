@@ -27,7 +27,7 @@ export function ProductCard({
         i === 0 ? 'md:row-span-2' : ''
       } group`}
     >
-      <DiscountBadge discount={discount} />
+      <DiscountBadge className="absolute top-5 left-5" discount={discount} />
       <div className="p-1">
         <div
           className={`absolute inset-x-0 top-0 h-0 bg-black/20 transition-all duration-300 ${
