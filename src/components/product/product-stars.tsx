@@ -7,7 +7,7 @@ interface ProductStarsProps {
 
 export default function ProductStars({ rating, size = 15 }: ProductStarsProps) {
   return (
-    <div className="flex items-center gap-1">
+    <div className="product-stars">
       {[...Array(5)].map((_, index) => (
         <FaStar
           key={index}

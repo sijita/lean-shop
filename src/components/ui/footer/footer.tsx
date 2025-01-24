@@ -1,28 +1,14 @@
+import '@/styles/footer.scss';
 import DownloadSection from './download-section';
 import Section from './footer-section';
 import TagsSection from './tags-section';
+import { footerTags } from '@/utils/constants';
 
 export default function Footer() {
-  const tags = [
-    'Game',
-    'iPhone',
-    'TV',
-    'Asus Laptops',
-    'MacBook',
-    'SSD',
-    'Graphics Card',
-    'Power Bank',
-    'Smart TV',
-    'Speaker',
-    'Tablet',
-    'Microwave',
-    'Samsung',
-  ];
-
   return (
-    <footer className="bg-[#1D1E1F] text-gray-300 py-12 px-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
+    <footer className="footer">
+      <div className="container">
+        <div className="grid">
           <Section
             title="CLICON"
             subtitle="Customer Support:"
@@ -55,9 +41,9 @@ export default function Footer() {
             ]}
           />
           <DownloadSection />
-          <TagsSection tags={tags} />
+          <TagsSection tags={footerTags} />
         </div>
-        <div className="mt-12 pt-8 border-t border-gray-800 text-center text-sm text-gray-500">
+        <div className="brand">
           <p>Kinbo eCommerce Template © 2021. Design by Templatecookie</p>
         </div>
       </div>

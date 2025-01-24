@@ -23,39 +23,24 @@ export default function ProductRow({
     });
 
   return (
-    <tr className="align-middle">
-      <td className="py-4 px-5 flex items-center gap-4">
-        <button
-          onClick={handleRemoveItem}
-          className="text-gray-400 hover:text-gray-500 cursor-pointer"
-        >
+    <tr className="product-row-container">
+      <td className="product-td">
+        <button onClick={handleRemoveItem} className="delete-button">
           <BiX size={20} />
         </button>
-        <Image
-          src={image}
-          alt={name}
-          className="h-16 w-16 rounded-lg object-cover"
-          width={64}
-          height={64}
-        />
-        <span className="text-sm text-pretty">{name}</span>
+        <Image src={image} alt={name} width={64} height={64} />
+        <span className="name">{name}</span>
       </td>
-      <td className="py-4 px-5 text-right">
+      <td className="discount-td">
         <DiscountPrices price={price} discount={discount} />
       </td>
-      <td className="py-4 px-5 text-center">
-        <div className="col-span-2">
-          <QuantitySelector
-            quantity={quantity}
-            setQuantity={handleQuantityChange}
-          />
-        </div>
+      <td className="quantity-td">
+        <QuantitySelector
+          quantity={quantity}
+          setQuantity={handleQuantityChange}
+        />
       </td>
-      <td className="py-4 px-5 text-right font-medium">
-        <div className="col-span-2 text-right font-medium">
-          {(discountedPrice * quantity).toFixed(2)}
-        </div>
-      </td>
+      <td className="subtotal-td">{(discountedPrice * quantity).toFixed(2)}</td>
     </tr>
   );
 }
