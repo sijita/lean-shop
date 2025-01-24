@@ -1,0 +1,85 @@
+@import '@/app/globals.scss';
+
+.footer {
+  @apply bg-[#1D1E1F] text-gray-300 py-12 px-6;
+
+  .container {
+    @apply max-w-7xl mx-auto;
+
+    .grid {
+      @apply grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8;
+
+      .section {
+        @apply space-y-4;
+
+        .title {
+          @apply text-white font-semibold text-lg;
+        }
+
+        .sub-section {
+          @apply space-y-2;
+
+          .subtitle {
+            @apply text-sm text-[#77878F];
+          }
+
+          .text1 {
+            @apply text-lg text-white;
+          }
+
+          .text2 & .text3 {
+            @apply text-sm text-[#ADB7BC];
+          }
+
+          .text4 {
+            @apply text-sm text-white;
+          }
+        }
+
+        .items {
+          @apply space-y-2;
+
+          a {
+            @apply text-sm hover:text-white;
+          }
+        }
+      }
+
+      .tags {
+        @apply space-y-4;
+
+        .title {
+          @apply text-white font-semibold;
+        }
+
+        .items {
+          @apply flex flex-wrap gap-2;
+
+          a {
+            @apply px-3 py-1 text-xs bg-transparent border border-[#303639] rounded-xs;
+          }
+        }
+      }
+
+      .download-section {
+        @apply space-y-4;
+
+        .title {
+          @apply text-white font-semibold;
+        }
+
+        .buttons {
+          @apply space-y-2;
+
+          a {
+            @apply block;
+          }
+        }
+      }
+    }
+  }
+
+  .brand {
+    @apply mt-12 pt-8 border-t border-gray-800 text-center text-sm text-gray-500;
+  }
+}

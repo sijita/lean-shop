@@ -1,11 +1,17 @@
-import React from "react";
+import { ProductCard } from '@/components/product/product-card';
+import { getProducts } from '@/api/products';
 
-const Homepage = async () => {
-    return (
-        <div>
-            <h1>Homepage</h1>
-        </div>
-    );
-};
+export default async function Homepage() {
+  const products = await getProducts();
 
-export default Homepage;
+  return (
+    <div className="homepage-container">
+      <h1 className="title">Más vistos</h1>
+      <div className="grid">
+        {products?.map((product, i) => (
+          <ProductCard key={product?.id} {...product} i={i} />
+        ))}
+      </div>
+    </div>
+  );
+}
