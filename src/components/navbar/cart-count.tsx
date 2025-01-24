@@ -4,7 +4,9 @@ import Link from 'next/link';
 import { FiShoppingCart } from 'react-icons/fi';
 
 export default function CartCount() {
-  const { items } = useCartStore();
+  const { items } = useCartStore((state) => ({
+    items: state.items,
+  }));
 
   return (
     <Link href="/cart" className="relative">
