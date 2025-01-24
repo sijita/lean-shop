@@ -1,3 +1,4 @@
+import Breadcrumb from '@/components/ui/breadcrumb';
 import { getProduct } from './api/product';
 
 type ProductDetailProps = {
@@ -11,8 +12,8 @@ export default async function ProductDetail({ params }: ProductDetailProps) {
   const product = await getProduct(id);
 
   return (
-    <div>
-      <h1>ProductDetail - {id}</h1>
+    <div className="min-h-screen">
+      <Breadcrumb alternativeText={product?.name} />
     </div>
   );
 }
