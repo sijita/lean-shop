@@ -18,26 +18,24 @@ export default function Section({
   items = [],
 }: SectionProps) {
   return (
-    <div className="space-y-4">
-      <h3 className="text-white font-semibold">{title}</h3>
+    <div className="section">
+      <h3 className="title">{title}</h3>
       {subtitle && (
-        <div className="space-y-2">
-          <p className="text-sm text-[#77878F]">{subtitle}</p>
-          <p className="text-lg text-white">{text1}</p>
+        <div className="sub-section">
+          <p className="subtitle">{subtitle}</p>
+          <p className="text1">{text1}</p>
           <div>
-            <p className="text-sm text-[#ADB7BC]">{text2}</p>
-            <p className="text-sm text-[#ADB7BC]">{text3}</p>
+            <p className="text2">{text2}</p>
+            <p className="text3">{text3}</p>
           </div>
-          <p className="text-sm text-white">{text4}</p>
+          <p className="text4">{text4}</p>
         </div>
       )}
       {items.length > 0 && (
-        <ul className="space-y-2">
+        <ul className="items">
           {items.map((item, index) => (
             <li key={index}>
-              <a href="#" className="text-sm hover:text-white">
-                {item}
-              </a>
+              <a href="#">{item}</a>
             </li>
           ))}
         </ul>

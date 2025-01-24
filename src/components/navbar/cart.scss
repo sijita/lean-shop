@@ -1,0 +1,9 @@
+@import '@/app/globals.scss';
+
+.cart {
+  @apply relative;
+
+  .cart-count {
+    @apply flex items-center justify-center h-5 w-5 p-[1px] rounded-full absolute -top-1 -right-2 bg-white text-[#1B6392] text-xs font-medium;
+  }
+}
