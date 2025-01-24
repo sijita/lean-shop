@@ -10,22 +10,14 @@ export default function HoveredActions({ product }: { product: Product }) {
   const { handleAddToCart } = useAddToCart();
 
   return (
-    <div
-      className={`absolute inset-x-0 top-0 h-0 bg-black/20 transition-all duration-300 group-hover:h-[60%] flex items-center gap-2 justify-center opacity-0 group-hover:opacity-100`}
-    >
-      <button className="rounded-full bg-[#FA8232] p-2 cursor-pointer">
+    <div className="absolute inset-x-0 top-0 h-0 bg-black/20 transition-all duration-300 group-hover:h-[60%] flex items-center gap-2 justify-center opacity-0 group-hover:opacity-100">
+      <button className="heart-icon">
         <BiHeart size={20} color="white" />
       </button>
-      <button
-        onClick={() => handleAddToCart(product)}
-        className="rounded-full bg-white p-2 cursor-pointer"
-      >
+      <button onClick={() => handleAddToCart(product)} className="cart-icon">
         <CgShoppingCart size={20} color="black" />
       </button>
-      <Link
-        href={`/product/${product.id}`}
-        className="rounded-full bg-white p-2"
-      >
+      <Link href={`/product/${product.id}`} className="eye-icon">
         <BsEye size={20} color="black" />
       </Link>
     </div>

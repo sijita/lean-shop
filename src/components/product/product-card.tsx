@@ -1,3 +1,4 @@
+import './product.scss';
 import type { Product } from '@/types/product';
 import Image from 'next/image';
 import DiscountBadge from './discount-badge';
@@ -18,12 +19,8 @@ export function ProductCard({
   image,
 }: Product & { i: number }) {
   return (
-    <div
-      className={`relative flex flex-col items-center bg-white border border-[#f5f5f5] ${
-        i === 0 ? 'md:row-span-2' : ''
-      } group`}
-    >
-      <DiscountBadge className="absolute top-5 left-5" discount={discount} />
+    <div className={`product-card group ${i === 0 && 'first-item'}`}>
+      <DiscountBadge className="discount-badge" discount={discount} />
       <HoveredActions
         product={{
           id,
@@ -37,23 +34,19 @@ export function ProductCard({
         }}
       />
       <Image
-        className={`object-contain w-full p-5 ${i === 0 ? 'h-96' : 'h-48'}`}
+        className={`image ${i === 0 ? 'first-item' : 'not-first-item'}`}
         src={image}
         alt={name}
         width={500}
         height={500}
       />
-      <div className="flex flex-col p-3 w-full gap-3">
-        <div className="flex flex-col gap-1">
-          <div className="flex items-center gap-1">
+      <div className="info">
+        <div className="name-section">
+          <div className="reviews">
             <ProductStars rating={rating} />
-            <span className="text-lg text-[#77878F]">
-              {reviews_number.toLocaleString()}
-            </span>
+            <span className="number">({reviews_number.toLocaleString()})</span>
           </div>
-          <h3 className="text-lg font-medium text-[#191C1F] text-pretty truncate">
-            {name}
-          </h3>
+          <h3 className="name">{name}</h3>
         </div>
         <DiscountPrices price={price} discount={discount} />
         <FirstProductDetails

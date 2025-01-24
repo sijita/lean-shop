@@ -1,4 +1,4 @@
-import React from 'react';
+import './product.scss';
 
 interface QuantitySelectorProps {
   quantity: number;
@@ -22,12 +22,10 @@ export default function QuantitySelector({
   };
 
   return (
-    <div
-      className={`flex items-center justify-center border border-gray-200 rounded p-1 flex-1 ${className}`}
-    >
+    <div className={`quantity-selector ${className}`}>
       <button
         onClick={() => handleQuantityChange(quantity - 1)}
-        className="px-3 py-2 text-gray-600 hover:text-gray-800 transition-colors disabled:opacity-50 cursor-pointer"
+        className="less-button"
         disabled={quantity <= min}
       >
         −
@@ -37,7 +35,7 @@ export default function QuantitySelector({
       </div>
       <button
         onClick={() => handleQuantityChange(quantity + 1)}
-        className="px-3 py-2 text-gray-600 hover:text-gray-800 transition-colors disabled:opacity-50 cursor-pointer"
+        className="more-button"
         disabled={quantity >= max}
       >
         +

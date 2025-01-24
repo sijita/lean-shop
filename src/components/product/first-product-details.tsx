@@ -16,13 +16,11 @@ export default function FirstProductDetails({
     <>
       {i === 0 && (
         <>
-          <p className="text-sm text-[#5F6C72] truncate">{product.summary}</p>
-          <div className="flex flex-col gap-2">
-            <AddToCartButton
-              className="w-auto flex items-center justify-center gap-2 bg-[#FA8232] px-4 py-2 rounded font-semibold"
-              onClick={() => handleAddToCart(product)}
-            />
-          </div>
+          <p className="summary">{product.summary}</p>
+          <AddToCartButton
+            className="add-to-cart-button"
+            onClick={() => handleAddToCart(product)}
+          />
         </>
       )}
     </>

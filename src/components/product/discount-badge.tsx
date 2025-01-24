@@ -8,9 +8,7 @@ export default function DiscountBadge({
   return (
     <>
       {discount > 0 && (
-        <div
-          className={`${className} bg-[#ffd814] px-2 py-1 rounded font-bold text-xs`}
-        >
+        <div className={`${className} discount-badge-container`}>
           {discount}% OFF
         </div>
       )}
