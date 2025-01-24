@@ -1,12 +1,10 @@
 'use client';
 import DiscountPrices from '@/components/product/discount-prices';
 import QuantitySelector from '@/components/product/quantity-selector';
-import { useCartStore } from '@/store/use-cart-store';
 import { Product } from '@/types/product';
 import Image from 'next/image';
-import { useState } from 'react';
-import toast from 'react-hot-toast';
 import { BiX } from 'react-icons/bi';
+import useUpdateCart from '@/app/(shop)/cart/hooks/use-update-cart';
 
 export default function ProductRow({
   id,
@@ -16,22 +14,13 @@ export default function ProductRow({
   discount,
   quantity: initialQuantity,
 }: Product & { quantity: number }) {
-  const { updateQuantity, removeFromCart } = useCartStore((state) => ({
-    updateQuantity: state.updateQuantity,
-    removeFromCart: state.removeFromCart,
-  }));
-  const [quantity, setQuantity] = useState(initialQuantity);
-  const discountedPrice = price - (price * discount) / 100;
-
-  const handleQuantityChange = (newQuantity: number) => {
-    setQuantity(newQuantity);
-    updateQuantity(id, newQuantity);
-  };
-
-  const handleRemoveItem = () => {
-    removeFromCart(id);
-    toast.success('Product removed from cart');
-  };
+  const { handleRemoveItem, quantity, handleQuantityChange, discountedPrice } =
+    useUpdateCart({
+      id,
+      price,
+      discount,
+      initialQuantity,
+    });
 
   return (
     <tr className="align-middle">

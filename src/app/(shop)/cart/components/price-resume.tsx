@@ -1,19 +1,7 @@
-import { useCartStore } from '@/store/use-cart-store';
+import useGetTotalPrices from '@/app/(shop)/cart/hooks/use-get-total-prices';
 
 export default function PriceResume() {
-  const { items } = useCartStore((state) => ({
-    items: state.items,
-  }));
-
-  const subtotal = items.reduce((acc, item) => {
-    return acc + item.price * item.quantity;
-  }, 0);
-
-  const totalDiscount = items.reduce((acc, item) => {
-    return acc + ((item.price * item.discount) / 100) * item.quantity;
-  }, 0);
-
-  const total = subtotal - totalDiscount;
+  const { subtotal, totalDiscount, total } = useGetTotalPrices();
 
   return (
     <div className="border border-gray-200 rounded p-6 xl:w-[420px]">
