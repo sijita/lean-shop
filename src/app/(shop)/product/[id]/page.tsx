@@ -1,3 +1,4 @@
+import './styles/product-details.scss';
 import Breadcrumb from '@/components/ui/breadcrumb/breadcrumb';
 import { getProduct } from './api/product';
 import Image from 'next/image';
@@ -21,37 +22,33 @@ export default async function ProductDetail({ params }: ProductDetailProps) {
   if (!product) return null;
 
   return (
-    <div className="min-h-screen">
+    <div className="product-details-container">
       <Breadcrumb alternativeText={product.name} />
-      <div className="mx-auto max-w-7xl p-10 pb-0 flex flex-col gap-20">
-        <div className="grid gap-8 md:grid-cols-2">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-white p-8 border border-[#E4E7E9]">
-            <Image
-              src={product.image}
-              alt={product.name}
-              fill
-              className="object-contain"
-            />
+      <div className="product-section">
+        <div className="grid">
+          <div className="image">
+            <Image src={product.image} alt={product.name} fill />
           </div>
-          <div className="space-y-6">
-            <div className="flex flex-col gap-2">
-              <div className="flex items-center space-x-2">
+          <div className="info-section">
+            <div className="first-section">
+              <div className="reviews-section">
                 <ProductStars rating={product.rating} />
-                <span className="text-sm text-gray-500">
+                <span className="reviews-number">
                   {product.reviews_number} Reviews
                 </span>
               </div>
-              <h1 className="text-xl font-normal text-gray-900">
-                {product.name}
-              </h1>
+              <h1 className="product-name">{product.name}</h1>
             </div>
             <ProductInfo />
-            <div className="flex items-center gap-2">
+            <div className="discount-section">
               <DiscountPrices
                 price={product.price}
                 discount={product.discount}
               />
-              <DiscountBadge discount={product.discount} />
+              <DiscountBadge
+                className="discount-badge"
+                discount={product.discount}
+              />
             </div>
             <hr className="text-[#E4E7E9]" />
             <ProductActions product={product} />

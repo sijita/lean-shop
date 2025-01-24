@@ -1,0 +1,141 @@
+@import '@/app/globals.scss';
+
+.product-details-container {
+  @apply min-h-screen;
+
+  .product-section {
+    @apply mx-auto max-w-7xl p-10 pb-0 flex flex-col gap-20;
+
+    .grid {
+      @apply grid gap-8 md:grid-cols-2;
+
+      .image {
+        @apply relative aspect-[4/3] overflow-hidden rounded-lg bg-white border border-[#E4E7E9];
+
+        img {
+          @apply object-contain p-10;
+        }
+      }
+
+      .info-section {
+        @apply space-y-6;
+
+        .info-container {
+          @apply flex justify-between gap-3 flex-wrap;
+
+          .column {
+            @apply flex flex-col gap-1;
+
+            p {
+              @apply text-gray-500;
+            }
+
+            span {
+              @apply text-black;
+            }
+          }
+        }
+
+        .first-section {
+          @apply flex flex-col gap-2;
+
+          .reviews-section {
+            @apply flex items-center space-x-2;
+
+            .reviews-number {
+              @apply text-sm text-gray-500;
+            }
+          }
+
+          .product-name {
+            @apply text-xl font-normal text-gray-900;
+          }
+        }
+      }
+
+      .discount-section {
+        @apply flex items-center gap-2;
+
+        .discount-badge {
+          @apply bg-[#ffd814] px-2 py-1 rounded font-bold;
+        }
+      }
+
+      .product-actions-container {
+        @apply flex items-center gap-5 flex-wrap;
+
+        .add-to-cart-button {
+          @apply xl:w-[310px] flex flex-row-reverse items-center justify-center gap-2 bg-[#FA8232] p-3 rounded font-semibold w-full;
+        }
+
+        .buy-now-button {
+          @apply rounded border border-orange-500 p-3 font-semibold text-orange-500 hover:bg-orange-50 flex-1 cursor-pointer;
+        }
+      }
+    }
+
+    .details-container {
+      @apply rounded border border-gray-200;
+
+      .row {
+        @apply flex flex-col sm:flex-row justify-between p-10 gap-10;
+
+        .column {
+          @apply flex flex-col gap-3;
+
+          h3 {
+            @apply font-semibold;
+          }
+
+          p {
+            @apply text-[#5F6C72];
+          }
+
+          ul {
+            @apply space-y-3 text-sm text-gray-600;
+
+            li {
+              @apply flex items-center gap-2;
+            }
+          }
+        }
+      }
+
+      .vertical-divider {
+        @apply border-l border-gray-200 max-h-full;
+      }
+
+      .shipping-container {
+        @apply flex flex-col gap-3;
+
+        h3 {
+          @apply font-semibold;
+        }
+
+        .list {
+          @apply space-y-3 text-sm text-gray-600;
+        }
+      }
+
+      .tabs-container {
+        @apply flex w-full overflow-auto border-b border-gray-200 px-10;
+
+        nav {
+          @apply flex items-center gap-5 mx-auto;
+
+          .tab {
+            @apply border-b-2 px-1 py-4 text-sm font-medium;
+
+            &.active {
+              @apply border-orange-500 text-orange-500;
+            }
+
+            &.inactive {
+              @apply border-transparent text-gray-500 hover:border-orange-300 hover:text-orange-500;
+            }
+          }
+        }
+      }
+    }
+  }
+}

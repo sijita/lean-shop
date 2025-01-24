@@ -1,20 +1,22 @@
+import '@/app/(shop)/product/[id]/styles/product-details.scss';
+
 export default function ProductInfo() {
   return (
-    <div className="flex justify-between gap-3 flex-wrap">
-      <div className="flex flex-col gap-1">
-        <p className="text-gray-500">
-          SKU: <span className="text-black">AD54671</span>
+    <div className="info-container">
+      <div className="column">
+        <p>
+          SKU: <span>AD54671</span>
         </p>
-        <p className="text-gray-500">
-          Brand: <span className="text-black">Apple</span>
+        <p>
+          Brand: <span>Apple</span>
         </p>
       </div>
-      <div>
-        <p className="text-gray-500">
-          Availability: <span className="text-green-500">In Stock</span>
+      <div className="column">
+        <p>
+          Availability: <span className="!text-green-500">In Stock</span>
         </p>
-        <p className="text-gray-500">
-          Category: <span className="text-gray-900">Electronics Devices</span>
+        <p>
+          Category: <span>Electronics Devices</span>
         </p>
       </div>
     </div>
