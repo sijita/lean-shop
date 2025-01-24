@@ -5,19 +5,9 @@ import { FaArrowLeft } from 'react-icons/fa6';
 import { useCartStore } from '@/store/use-cart-store';
 
 export default function ProductsResume() {
-  const { items, removeFromCart, clearCart, updateQuantity } = useCartStore(
-    (state) => ({
-      items: state.items,
-      removeFromCart: state.removeFromCart,
-      clearCart: state.clearCart,
-      updateQuantity: state.updateQuantity,
-    })
-  );
-
-  const total = items.reduce(
-    (sum, item) => sum + item.price * item.quantity,
-    0
-  );
+  const { items } = useCartStore((state) => ({
+    items: state.items,
+  }));
 
   return (
     <div className="border border-gray-200 min-w-[300px] w-full">
@@ -56,8 +46,15 @@ export default function ProductsResume() {
           </div>
         </div>
       ) : (
-        <div className="flex items-center justify-center h-[50vh]">
+        <div className="flex flex-col gap-2 items-center justify-center p-10">
           <span className="text-lg text-gray-500">Your cart is empty</span>
+          <Link
+            href="/"
+            className="flex items-center justify-center gap-3 rounded border border-[#2DA5F3] hover:bg-blue-50 px-6 py-2 max-md:w-full"
+          >
+            <FaArrowLeft color="#2DA5F3" />
+            <span className="text-[#2DA5F3]">RETURN TO SHOP</span>
+          </Link>
         </div>
       )}
     </div>
