@@ -1,0 +1,13 @@
+@import '@/app/globals.scss';
+
+.breadcrumb-container {
+  @apply px-4 py-3 text-sm text-gray-500 bg-gray-50 w-full overflow-auto;
+
+  .list {
+    @apply flex items-center space-x-2;
+
+    .link {
+      @apply hover:text-gray-700;
+    }
+  }
+}

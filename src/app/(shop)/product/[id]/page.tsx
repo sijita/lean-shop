@@ -1,4 +1,4 @@
-import Breadcrumb from '@/components/ui/breadcrumb';
+import Breadcrumb from '@/components/ui/breadcrumb/breadcrumb';
 import { getProduct } from './api/product';
 import Image from 'next/image';
 import ProductStars from '@/components/product/product-stars';

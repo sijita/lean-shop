@@ -1,4 +1,5 @@
 'use client';
+import './breadcrumb.scss';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react';
@@ -27,10 +28,10 @@ export default function Breadcrumb({
   });
 
   return (
-    <nav className="px-4 py-3 text-sm text-gray-500 bg-gray-50 w-full overflow-auto">
-      <ol className="flex items-center space-x-2">
+    <nav className="breadcrumb-container">
+      <ol className="list">
         <li>
-          <Link href="/" className="hover:text-gray-700">
+          <Link href="/" className="link">
             Home
           </Link>
         </li>
@@ -38,7 +39,7 @@ export default function Breadcrumb({
           <React.Fragment key={breadcrumb.href}>
             <li>/</li>
             <li>
-              <Link href={breadcrumb.href} className="hover:text-gray-700">
+              <Link href={breadcrumb.href} className="link">
                 {breadcrumb.label}
               </Link>
             </li>
