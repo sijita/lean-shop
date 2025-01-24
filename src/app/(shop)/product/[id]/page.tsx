@@ -1,18 +1,18 @@
-import React from "react";
+import { getProduct } from './api/product';
 
 type ProductDetailProps = {
-    params: {
-        id: string;
-    };
+  params: {
+    id: string;
+  };
 };
 
-const ProductDetail = async ({ params }: ProductDetailProps) => {
-    const { id } = params;
-    return (
-        <div>
-            <h1>ProductDetail - {id}</h1>
-        </div>
-    );
-};
+export default async function ProductDetail({ params }: ProductDetailProps) {
+  const { id } = params;
+  const product = await getProduct(id);
 
-export default ProductDetail;
+  return (
+    <div>
+      <h1>ProductDetail - {id}</h1>
+    </div>
+  );
+}
