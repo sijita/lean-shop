@@ -16,11 +16,11 @@ export default function DiscountPrices({
             : 'font-semibold text-[#2DA5F3] text-md'
         }`}
       >
-        ${discountedPrice.toFixed(2)}
+        ${price.toFixed(2)}
       </span>
       {discount > 0 && (
         <span className="text-lg font-semibold text-[#2DA5F3]">
-          ${price.toFixed(2)}
+          ${discountedPrice.toFixed(2)}
         </span>
       )}
     </div>
