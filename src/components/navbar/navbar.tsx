@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { FaShop } from 'react-icons/fa6';
 import { FiShoppingCart } from 'react-icons/fi';
 import styles from './Navbar.module.scss';
+import CartCount from './cart-count';
 
 export default function Navbar() {
   return (
@@ -14,11 +15,7 @@ export default function Navbar() {
               LeanShop
             </Link>
           </div>
-          <div className={styles.card}>
-            <Link href="/cart">
-              <FiShoppingCart size={28} />
-            </Link>
-          </div>
+          <CartCount />
         </nav>
       </header>
     </div>
