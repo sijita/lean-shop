@@ -6,7 +6,7 @@ export const proccessPurchase = async (
     product: string;
     quantity: number;
   }[]
-) => {
+): Promise<{ type: 'success' | 'error'; message: string }> => {
   try {
     await axios.post('/purchase-products', products);
 

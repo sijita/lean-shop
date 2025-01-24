@@ -1,16 +1,16 @@
+import '@/styles/navbar.scss';
 import Link from 'next/link';
 import { FaShop } from 'react-icons/fa6';
-import styles from './Navbar.module.scss';
 import CartCount from './cart-count';
 
 export default function Navbar() {
   return (
-    <div className={styles.root}>
-      <header className={styles.header}>
-        <nav className={styles.navbar}>
-          <div className={styles.brand}>
+    <div className="root">
+      <header className="header">
+        <nav className="navbar">
+          <div className="brand">
             <FaShop size={28} />
-            <Link href="/" className={styles.brandName}>
+            <Link href="/" className="brandName">
               LeanShop
             </Link>
           </div>

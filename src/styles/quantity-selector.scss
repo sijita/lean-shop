@@ -1,0 +1,17 @@
+@import '@/app/globals.scss';
+
+.quantity-selector {
+  @apply flex items-center justify-center border border-gray-200 rounded p-1 flex-1;
+
+  .less-button {
+    @apply px-3 py-2 text-gray-600 hover:text-gray-800 transition-colors disabled:opacity-50 cursor-pointer;
+  }
+
+  .quantity {
+    @apply w-12 text-center font-medium;
+  }
+
+  .more-button {
+    @apply px-3 py-2 text-gray-600 hover:text-gray-800 transition-colors disabled:opacity-50 cursor-pointer;
+  }
+}

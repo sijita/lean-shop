@@ -1,25 +1,10 @@
-import './footer.scss';
+import '@/styles/footer.scss';
 import DownloadSection from './download-section';
 import Section from './footer-section';
 import TagsSection from './tags-section';
+import { footerTags } from '@/utils/constants';
 
 export default function Footer() {
-  const tags = [
-    'Game',
-    'iPhone',
-    'TV',
-    'Asus Laptops',
-    'MacBook',
-    'SSD',
-    'Graphics Card',
-    'Power Bank',
-    'Smart TV',
-    'Speaker',
-    'Tablet',
-    'Microwave',
-    'Samsung',
-  ];
-
   return (
     <footer className="footer">
       <div className="container">
@@ -56,7 +41,7 @@ export default function Footer() {
             ]}
           />
           <DownloadSection />
-          <TagsSection tags={tags} />
+          <TagsSection tags={footerTags} />
         </div>
         <div className="brand">
           <p>Kinbo eCommerce Template © 2021. Design by Templatecookie</p>

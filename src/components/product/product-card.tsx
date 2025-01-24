@@ -1,4 +1,4 @@
-import './product.scss';
+import '@/styles/product.scss';
 import type { Product } from '@/types/product';
 import Image from 'next/image';
 import DiscountBadge from './discount-badge';

@@ -1,5 +1,4 @@
 'use client';
-import './cart.scss';
 import { useCartStore } from '@/store/use-cart-store';
 import Link from 'next/link';
 import { FiShoppingCart } from 'react-icons/fi';

@@ -1,4 +1,4 @@
-import './product.scss';
+import '@/styles/quantity-selector.scss';
 
 interface QuantitySelectorProps {
   quantity: number;
