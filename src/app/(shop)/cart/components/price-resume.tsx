@@ -4,7 +4,7 @@ export default function PriceResume() {
   const { subtotal, totalDiscount, total } = useGetTotalPrices();
 
   return (
-    <div className="border border-gray-200 rounded p-6 xl:w-[420px]">
+    <div className="border border-gray-200 rounded p-6 xl:w-[420px] max-h-auto self-start">
       <h2 className="mb-6 text-xl font-medium">Card Totals</h2>
       <div className="space-y-4">
         <div className="flex justify-between text-sm">
@@ -23,7 +23,10 @@ export default function PriceResume() {
             </div>
           </div>
         </div>
-        <button className="w-full rounded bg-[#FF7E1B] px-6 py-3 text-center text-sm font-medium text-white hover:bg-[#FF7E1B]/90 cursor-pointer">
+        <button
+          disabled={!total}
+          className="w-full rounded bg-[#FF7E1B] px-6 py-3 text-center text-sm font-medium text-white hover:bg-[#FF7E1B]/90 cursor-pointer disabled:bg-[#FF7E1B]/50 disabled:cursor-default"
+        >
           PROCEED TO CHECKOUT
         </button>
       </div>
